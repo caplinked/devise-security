@@ -1,16 +1,34 @@
-<h2>Renew your password</h2>
+<%= image_tag 'caplinked_logo_black.png', :alt => "CapLinked", :class => 'logo' %>
+
+<%= stylesheet_link_tag 'onboarding' %>
+<style type="text/css">
+  header { display: none; }
+</style>
+
+<div class="password-expired-form">
+
+<section>
+
+<h2>Update Your Password</h2>
+
+<h4>You need to update your password because you are a member of a workspace with a password expiration policy and your password has expired.</h4>
 
 <%= form_for(resource, :as => resource_name, :url => [resource_name, :password_expired], :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :current_password, "Current password" %><br />
+  <p><%= f.label :current_password, "Enter Current Password" %><br />
   <%= f.password_field :current_password %></p>
 
-  <p><%= f.label :password, "New password" %><br />
+  <p><%= f.label :password, "New Password" %><br />
   <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation, "Confirm new password" %><br />
+  <p><%= f.label :password_confirmation, "Confirm New Password" %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.submit "Change my password" %></p>
+  <p><%= f.submit "Update Password" %></p>
 <% end %>
+
+</section>
+
+</div>
+
